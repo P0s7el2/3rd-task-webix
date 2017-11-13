@@ -117,7 +117,9 @@ var form =
 						{
 					  		var item = $$("myform").getValues();
 					  		//как поступить с id: оставить или убрать из формы
-
+							for (key in item){
+							item[key] = item[key].replace(/<[^>]+>/g,'');
+							};
 					  		if ($$("mydata").getItem(item.id))
 					  		{
 					  			webix.message({text:"Id exists", type:"error"});
